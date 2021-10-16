@@ -1,8 +1,13 @@
 Zend Lucene Search
 ====================================
-Zend Lucene search component for Yii2.
+Zend Lucene search
 
-[![Packagist](https://img.shields.io/packagist/dt/himiklab/yii2-search-component-v2.svg)]() [![Packagist](https://img.shields.io/packagist/v/himiklab/yii2-search-component-v2.svg)]()  [![license](https://img.shields.io/badge/License-MIT-yellow.svg)]()
+[![Latest Stable Version](https://poser.pugx.org/panix/mod-zend-search/v/stable)](https://packagist.org/packages/panix/mod-zend-search)
+[![Total Downloads](https://poser.pugx.org/panix/mod-zend-search/downloads)](https://packagist.org/packages/panix/mod-zend-search)
+[![Monthly Downloads](https://poser.pugx.org/panix/mod-zend-search/d/monthly)](https://packagist.org/packages/panix/mod-zend-search)
+[![Daily Downloads](https://poser.pugx.org/panix/mod-zend-search/d/daily)](https://packagist.org/packages/panix/mod-zend-search)
+[![Latest Unstable Version](https://poser.pugx.org/panix/mod-zend-search/v/unstable)](https://packagist.org/packages/panix/mod-zend-search)
+[![License](https://poser.pugx.org/panix/mod-zend-search/license)](https://packagist.org/packages/panix/mod-zend-search)
 
 Installation
 ------------
@@ -59,10 +64,6 @@ public function behaviors()
     ];
 }
 ```
-
-Usage
------
-See example `Search` module in `samples` directory.
 
 Resources
 ---------
