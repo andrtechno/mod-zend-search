@@ -14,7 +14,7 @@ class DefaultController extends ConsoleController
     // Of course, this function should be in the console part of the application!
     public function actionIndexing()
     {
-        /** @var \himiklab\yii2\search\Search $search */
+        /** @var \panix\mod\search\Search $search */
         $search = Yii::$app->search;
        // $search->indexDirectory = '@app/runtime/search/ru';
         $search->language = 'ru';

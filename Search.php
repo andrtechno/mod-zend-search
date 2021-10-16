@@ -1,6 +1,4 @@
 <?php
-
-
 namespace panix\mod\search;
 
 use Yii;

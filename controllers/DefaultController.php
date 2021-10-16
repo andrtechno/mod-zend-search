@@ -13,7 +13,7 @@ class DefaultController extends WebController
 
     public function actionIndex($q = '')
     {
-        /** @var \himiklab\yii2\search\Search $search */
+        /** @var \panix\mod\search\Search $search */
         $search = Yii::$app->search;
        // CMS::dump($search);die;
         //  $searchData = $search->find($q); // Search by full index.
@@ -37,7 +37,7 @@ class DefaultController extends WebController
     // Of course, this function should be in the console part of the application!
     public function actionIndexing()
     {
-        /** @var \himiklab\yii2\search\Search $search */
+        /** @var \panix\mod\search\Search $search */
         $search = Yii::$app->search;
         $search->index();
     }

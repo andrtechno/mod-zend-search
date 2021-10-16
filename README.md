@@ -22,7 +22,7 @@ to the require section of your application's `composer.json` file.
 ```php
 'components' => [
     'search' => [
-        'class' => 'himiklab\yii2\search\Search',
+        'class' => 'panix\mod\search\Search',
         'models' => [
             'app\modules\page\models\Page',
         ],
@@ -34,7 +34,7 @@ to the require section of your application's `composer.json` file.
 * Add behavior in the AR models, for example:
 
 ```php
-use himiklab\yii2\search\behaviors\SearchBehavior;
+use panix\mod\search\behaviors\SearchBehavior;
 
 public function behaviors()
 {
