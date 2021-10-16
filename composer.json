@@ -1,0 +1,26 @@
+{
+  "name": "panix/mod-zend-search",
+  "description": "Zend Lucene search",
+  "keywords": ["yii2", "search", "lucene"],
+  "type": "pixelion-module",
+  "license": "MIT",
+  "support": {
+    "source": "https://github.com/andrtechno/mod-zend-search",
+    "issues": "https://github.com/andrtechno/mod-zend-search/issues"
+  },
+  "authors": [
+    {
+      "name": "Panix",
+      "homepage": "https://github.com/andrtechno/"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "*",
+    "zendframework/zendsearch": "*@RC"
+  },
+  "autoload": {
+    "psr-4": {
+      "panix\\mod\\search\\": ""
+    }
+  }
+}
