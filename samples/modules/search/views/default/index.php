@@ -15,7 +15,7 @@ $query = yii\helpers\Html::encode($query);
 $this->title = "Results for \"$query\"";
 $this->params['breadcrumbs'] = ['Search', $this->title];
 
-app\modules\search\SearchAssets::register($this);
+panix\mod\search\SearchAssets::register($this);
 $this->registerJs("jQuery('.search').highlight('{$query}');");
 
 if (!empty($hits)):

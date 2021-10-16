@@ -1,7 +1,7 @@
 <?php
 
 
-namespace app\modules\search;
+namespace panix\mod\search;
 
 use Yii;
 use yii\base\Component;

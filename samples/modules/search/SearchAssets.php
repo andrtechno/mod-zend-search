@@ -5,7 +5,7 @@
  * @license http://opensource.org/licenses/MIT MIT
  */
 
-namespace app\modules\search;
+namespace panix\mod\search;
 
 use yii\web\AssetBundle;
 

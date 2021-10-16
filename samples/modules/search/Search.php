@@ -5,7 +5,7 @@
  * @license http://opensource.org/licenses/MIT MIT
  */
 
-namespace app\modules\search;
+namespace panix\mod\search;
 
 use yii\base\Module;
 
@@ -13,9 +13,9 @@ use yii\base\Module;
  * Site search example module.
  *
  * @author HimikLab
- * @package app\modules\search
+ * @package panix\mod\search
  */
 class Search extends Module
 {
-    public $controllerNamespace = 'app\modules\search\controllers';
+    public $controllerNamespace = 'panix\mod\search\controllers';
 }

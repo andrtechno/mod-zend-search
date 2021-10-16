@@ -1,17 +1,12 @@
 <?php
-/**
- * @link https://github.com/himiklab/yii2-search-component-v2
- * @copyright Copyright (c) 2014-2017 HimikLab
- * @license http://opensource.org/licenses/MIT MIT
- */
 
-namespace app\modules\search;
+namespace panix\mod\search;
 
 use yii\web\AssetBundle;
 
 class SearchAssets extends AssetBundle
 {
-    public $sourcePath = '@app/modules/search/assets';
+    public $sourcePath = __DIR__.'/assets';
 
     public $depends = [
         'yii\web\JqueryAsset'

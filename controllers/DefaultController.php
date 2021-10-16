@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\search\controllers;
+namespace panix\mod\search\controllers;
 
 use panix\engine\CMS;
 use Yii;

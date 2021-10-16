@@ -5,7 +5,7 @@
  * @license http://opensource.org/licenses/MIT MIT
  */
 
-namespace app\modules\search\behaviors;
+namespace panix\mod\search\behaviors;
 
 use Yii;
 use yii\base\Behavior;

@@ -5,7 +5,7 @@
  * @license http://opensource.org/licenses/MIT MIT
  */
 
-namespace app\modules\search\controllers;
+namespace panix\mod\search\controllers;
 
 use Yii;
 use yii\web\Controller;

@@ -13,7 +13,7 @@ $this->title = "Результат поиска \"$query\"";
 $this->context->pageName = 'Результат поиска';
 $this->params['breadcrumbs'] = ['Поиск', $this->title];
 
-app\modules\search\SearchAssets::register($this);
+panix\mod\search\SearchAssets::register($this);
 $this->registerJs("jQuery('.search').highlight('{$query}');");
 
 //\panix\engine\CMS::dump($hits);die;

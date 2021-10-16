@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\search;
+namespace panix\mod\search;
 
 use panix\engine\WebModule;
 use yii\base\BootstrapInterface;
@@ -9,7 +9,7 @@ use yii\web\GroupUrlRule;
 
 class Module extends WebModule implements BootstrapInterface
 {
-  //  public $controllerNamespace = 'app\modules\search\controllers';
+  //  public $controllerNamespace = 'panix\mod\search\controllers';
 
 
 

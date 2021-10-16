@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\search\commands;
+namespace panix\mod\search\commands;
 
 use yii\helpers\Console;
 use yii\console\ExitCode;
