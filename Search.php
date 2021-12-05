@@ -1,4 +1,5 @@
 <?php
+
 namespace panix\mod\search;
 
 use Yii;
@@ -47,6 +48,7 @@ class Search extends Component
     /** @var \ZendSearch\Lucene\Index[] */
     protected $luceneIndex;
     public $language = 'ru';
+
     public function __destruct()
     {
         $this->luceneIndex->commit();
@@ -61,18 +63,19 @@ class Search extends Component
             Analyzer::setDefault($this->parseNumeric ? new CaseInsensitiveNum() : new CaseInsensitive());
         }
 
-foreach (Yii::$app->languageManager->languages as $lang){
+        foreach (Yii::$app->languageManager->languages as $lang) {
 //echo $this->indexDirectory.'/'.$lang->code;die;
-   // $this->indexDirectory[$lang->code] = FileHelper::normalizePath(Yii::getAlias('@app/runtime/search/'.$lang->code));
-   // $this->luceneIndex[$lang->code] = $this->getLuceneIndex($this->indexDirectory[$lang->code]);
-}
+            // $this->indexDirectory[$lang->code] = FileHelper::normalizePath(Yii::getAlias('@app/runtime/search/'.$lang->code));
+            // $this->luceneIndex[$lang->code] = $this->getLuceneIndex($this->indexDirectory[$lang->code]);
+        }
         $this->indexDirectory = FileHelper::normalizePath(Yii::getAlias($this->indexDirectory));
         $this->luceneIndex = $this->getLuceneIndex($this->indexDirectory);
 //print_r($this->luceneIndex);die;
 
     }
 
-    public function path($path){
+    public function path($path)
+    {
         $this->indexDirectory = FileHelper::normalizePath(Yii::getAlias($path));
         //echo $this->indexDirectory;die;
         $this->luceneIndex = $this->getLuceneIndex($this->indexDirectory);
@@ -84,7 +87,7 @@ foreach (Yii::$app->languageManager->languages as $lang){
      * Indexing the contents of the specified models.
      * @throws InvalidConfigException
      */
-    public function index($language='ru')
+    public function index($language = 'ru')
     {
         if ($this->luceneIndex->count() !== 0) {
             $this->luceneIndex = Lucene::create($this->indexDirectory);
@@ -97,14 +100,14 @@ foreach (Yii::$app->languageManager->languages as $lang){
             $model = new $modelName;
             if ($model->hasMethod('getSearchModels')) {
                 foreach ($model->getSearchModels()->all() as $pageModel) {
-                   // $test = call_user_func($model->searchFields, $pageModel);
-                   // foreach ($test as $k=>$i){
-                   //     $this->luceneIndex->addDocument($this->createDocument($i));
-                   // }
+                    // $test = call_user_func($model->searchFields, $pageModel);
+                    // foreach ($test as $k=>$i){
+                    //     $this->luceneIndex->addDocument($this->createDocument($i));
+                    // }
                     $this->luceneIndex->addDocument($this->createDocument(
                         call_user_func($model->searchFields, $pageModel)
                     ));
-                 //  print_r(call_user_func($model->searchFields, $pageModel));die;
+                    //  print_r(call_user_func($model->searchFields, $pageModel));die;
 
                 }
             } else {
@@ -213,8 +216,8 @@ foreach (Yii::$app->languageManager->languages as $lang){
 
             $document->addField(Field::$currentType(
                 $field['name'],
-                $field['value'],
-              //  $field['language']
+                $field['value']
+            //  $field['language']
             ));
         }
         return $document;

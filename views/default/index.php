@@ -19,30 +19,28 @@ $this->registerJs("jQuery('.search').highlight('{$query}');");
 //\panix\engine\CMS::dump($hits);die;
 ?>
 
-<div class="case-details">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-9 col-md-12">
                 <div class="process case-dt mg-case-details">
                     <?php
                     if (!empty($hits)) { ?>
-                        <h3 class="title d-none">По запросу "<?= $query ?>" found!</h3>
-                        <ul class="process-steps">
+                        <h1 class=""><?= Yii::t('search/default','RESULT',[$query,$totalCount]); ?></h1>
+
                             <?php foreach ($hits as $key => $hit) {
 
                                 ?>
-                                <li class="steps">
-                                    <div class="steps-name">
-                                        <span class="number"><?= $key + 1; ?></span>
-                                        <span class="name">
-                                <?php if (isset($hit->url)) { ?>
-                                    <a href="<?= yii\helpers\Url::to(\yii\helpers\Json::decode($hit->url)) ?>"><?= $hit->title ?></a>
-                                <?php } else { ?>
-                                    <?= $hit->title ?>
-                                <?php } ?>
-                                        </span>
+                                <div class="card mb-3">
+                                    <div class="card-header">
+                                        <?php if (isset($hit->url)) { ?>
+                                            <a href="<?= yii\helpers\Url::to(\yii\helpers\Json::decode($hit->url)) ?>"><?= $hit->title ?></a>
+                                        <?php } else { ?>
+                                            <?= $hit->title ?>
+                                        <?php } ?>
                                     </div>
-                                    <div class="content-steps">
+
+                                    <div class="card-body">
                                         <?php if (!empty($hit->short_text)) { ?>
                                             <?= html_entity_decode($hit->short_text) ?>
                                         <?php } else { ?>
@@ -50,19 +48,17 @@ $this->registerJs("jQuery('.search').highlight('{$query}');");
                                         <?php } ?>
 
                                     </div>
-                                </li>
+                                </div>
 
-
-                                <hr/>
                             <?php } ?>
-                        </ul>
+
                     <?php } else { ?>
-                        <h3>По запросу "<?= $query ?>" нечего не найдено.</h3>
+                        <h3><?= Yii::t('search/default','NOT_RESULT',$query); ?></h3>
                         <?php
                     }
 
 
-                    echo yii\widgets\LinkPager::widget([
+                    echo \yii\bootstrap4\LinkPager::widget([
                         'pagination' => $pagination,
                     ]);
                     ?>
@@ -70,39 +66,6 @@ $this->registerJs("jQuery('.search').highlight('{$query}');");
                 </div>
 
             </div>
-            <div class="col-lg-3 col-md-12">
-                <div class="sidebar-case">
-                    <div class="widget">
-                        <h3 class="widget-title"><span>Популярные услуги</span></h3>
-                    </div>
-
-
-                    <?php
-
-                    $services = \app\modules\services\models\Services::find()
-                        ->andWhere(['important' => 1])
-                        ->published()
-                        ->limit(3)
-                        ->all();
-                    foreach ($services as $item) {
-                        $image = $item->getImageUrl('image', '370x216');
-                        ?>
-                        <div class="similar-case">
-                            <div class="featured-post">
-                                <div class="entry-image">
-                                    <?= Html::img($image, ['alt' => $item->name, 'title' => $item->name]); ?>
-
-                                </div>
-                            </div>
-                            <div class="case-content">
-                                <h3 class="title"><?= Html::a($item->name, $item->getUrl($item->category->slug)); ?></h3>
-                            </div>
-                        </div>
-                    <?php } ?>
-
-
-                </div>
-            </div>
         </div>
     </div>
-</div><!-- case-details -->
+
